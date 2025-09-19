@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiragana Quiz - Learn Japanese Characters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏮 Hiragana Quiz</h1>
+            <p>Test your knowledge of Japanese Hiragana characters!</p>
+        </header>
+
+        <main>
+            <div class="quiz-section">
+                <div class="score-display">
+                    <span class="current-score">Score: <span id="current-score">0</span>/<span id="total-questions">0</span></span>
+                    <span class="percentage">Accuracy: <span id="percentage">0</span>%</span>
+                </div>
+
+                <div class="question-card">
+                    <div class="hiragana-character" id="hiragana-display">あ</div>
+                    <div class="input-section">
+                        <input type="text" id="romaji-input" placeholder="Type the romaji..." autocomplete="off">
+                        <button id="submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="start-btn">Start Quiz</button>
+                    <button id="next-btn" style="display: none;">Next</button>
+                    <button id="finish-btn" style="display: none;">Finish Quiz</button>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section" style="display: none;">
+                <h2>Quiz Results</h2>
+                <div class="final-score">
+                    <p>Final Score: <span id="final-score">0</span>/<span id="final-total">0</span></p>
+                    <p>Accuracy: <span id="final-percentage">0</span>%</p>
+                </div>
+                
+                <div class="incorrect-answers" id="incorrect-answers" style="display: none;">
+                    <h3>Characters to Review:</h3>
+                    <div class="incorrect-list" id="incorrect-list"></div>
+                </div>
+
+                <button id="restart-btn">Try Again</button>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

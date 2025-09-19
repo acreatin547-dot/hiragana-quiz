@@ -1,0 +1,286 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Quiz section styles */
+.quiz-section {
+    margin-bottom: 30px;
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.question-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    border: 2px solid #e9ecef;
+}
+
+.hiragana-character {
+    font-size: 6em;
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 30px;
+    font-family: 'MS Gothic', 'Hiragino Sans', 'Yu Gothic', monospace;
+}
+
+.input-section {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#romaji-input {
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#romaji-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Button styles */
+button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#submit-btn, #start-btn, #restart-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#submit-btn:hover, #start-btn:hover, #restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#next-btn, #finish-btn {
+    background: #28a745;
+    color: white;
+    margin: 0 10px;
+}
+
+#next-btn:hover, #finish-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.quiz-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Results section styles */
+.results-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.results-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.final-score {
+    margin-bottom: 30px;
+}
+
+.final-score p {
+    font-size: 1.3em;
+    color: #495057;
+    margin: 10px 0;
+}
+
+.incorrect-answers {
+    margin-bottom: 30px;
+}
+
+.incorrect-answers h3 {
+    color: #dc3545;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.incorrect-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.incorrect-item {
+    background: white;
+    border: 2px solid #dc3545;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.incorrect-hiragana {
+    font-size: 2em;
+    font-family: 'MS Gothic', 'Hiragino Sans', 'Yu Gothic', monospace;
+    color: #dc3545;
+    margin-bottom: 5px;
+}
+
+.incorrect-romaji {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Progress bar styles */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Feedback styles */
+.feedback {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.feedback.correct {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .hiragana-character {
+        font-size: 4em;
+    }
+    
+    .input-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    #romaji-input {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .score-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .incorrect-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 200px;
+    }
+}
