@@ -118,6 +118,9 @@ class HiraganaQuiz {
         this.score = 0;
         this.incorrectAnswers = [];
         
+        // Add quiz-started class for styling
+        document.querySelector('.quiz-section').classList.add('quiz-started');
+        
         // Hide start button and show quiz elements
         this.elements.startBtn.style.display = 'none';
         this.elements.submitBtn.style.display = 'inline-block';
@@ -237,6 +240,9 @@ class HiraganaQuiz {
         
         // Generate new questions
         this.generateQuestions();
+        
+        // Remove quiz-started class for main menu styling
+        document.querySelector('.quiz-section').classList.remove('quiz-started');
         
         // Reset UI
         document.querySelector('.quiz-section').style.display = 'block';
