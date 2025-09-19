@@ -117,4 +117,4 @@ Feel free to submit issues, feature requests, or pull requests to improve the qu
 4. **Mix It Up**: The randomized order helps with true recognition
 5. **Be Patient**: Learning Hiragana takes time and practice
 
-Happy learning! 頑張って！ (Ganbatte! - Good luck!)
+Happy learning! 頑張って！ (Ganbatte! - Good luck!)"# hiragana-quiz" 
