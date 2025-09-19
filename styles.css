@@ -62,7 +62,25 @@ header {
 
 .quiz-section:not(.quiz-started) .subtitle {
     font-size: 1.3em;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+/* Hide quiz elements in main menu */
+.quiz-section:not(.quiz-started) .score-display {
+    display: none;
+}
+
+.quiz-section:not(.quiz-started) .question-card {
+    display: none;
+}
+
+/* Center the header in main menu */
+.quiz-section:not(.quiz-started) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
 }
 
 /* Quiz section styles */

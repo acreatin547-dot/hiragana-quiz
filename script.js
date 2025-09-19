@@ -60,6 +60,7 @@ class HiraganaQuiz {
         this.initializeElements();
         this.bindEvents();
         this.generateQuestions();
+        this.initializeMainMenu();
     }
     
     initializeElements() {
@@ -112,6 +113,16 @@ class HiraganaQuiz {
         this.elements.totalQuestions.textContent = this.questions.length;
     }
     
+    initializeMainMenu() {
+        // Hide quiz elements in main menu state
+        this.elements.submitBtn.style.display = 'none';
+        this.elements.romajiInput.style.display = 'none';
+        this.elements.nextBtn.style.display = 'none';
+        this.elements.finishBtn.style.display = 'none';
+        document.querySelector('.score-display').style.display = 'none';
+        document.querySelector('.question-card').style.display = 'none';
+    }
+    
     startQuiz() {
         this.isQuizStarted = true;
         this.currentQuestion = 0;
@@ -121,11 +132,15 @@ class HiraganaQuiz {
         // Add quiz-started class for styling
         document.querySelector('.quiz-section').classList.add('quiz-started');
         
-        // Hide start button and show quiz elements
+        // Show quiz elements and hide start button
         this.elements.startBtn.style.display = 'none';
         this.elements.submitBtn.style.display = 'inline-block';
         this.elements.romajiInput.style.display = 'inline-block';
         this.elements.resultsSection.style.display = 'none';
+        
+        // Show score display and question card
+        document.querySelector('.score-display').style.display = 'flex';
+        document.querySelector('.question-card').style.display = 'block';
         
         this.showQuestion();
         this.updateScore();
@@ -251,10 +266,14 @@ class HiraganaQuiz {
         this.elements.submitBtn.style.display = 'none';
         this.elements.nextBtn.style.display = 'none';
         this.elements.finishBtn.style.display = 'none';
-        this.elements.romajiInput.style.display = 'inline-block';
+        this.elements.romajiInput.style.display = 'none';
         this.elements.romajiInput.disabled = false;
         this.elements.hiraganaDisplay.textContent = 'あ';
         this.elements.romajiInput.value = '';
+        
+        // Hide quiz elements in main menu
+        document.querySelector('.score-display').style.display = 'none';
+        document.querySelector('.question-card').style.display = 'none';
         
         this.updateScore();
         this.updateProgress();
