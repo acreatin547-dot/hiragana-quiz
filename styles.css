@@ -376,6 +376,50 @@ button {
     font-weight: 400;
 }
 
+.lessons-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 30px;
+    background: #e9ecef;
+    padding: 4px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #6c757d;
+}
+
+.toggle-btn.active {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn:hover:not(.active) {
+    background: #f8f9fa;
+    color: #495057;
+}
+
+.lessons-actions {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
 .characters-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -490,6 +534,15 @@ button {
     .lessons-header h2 {
         font-size: 2em;
     }
+    
+    .lessons-toggle {
+        max-width: 300px;
+    }
+    
+    .toggle-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -531,5 +584,15 @@ button {
     
     .character-romaji {
         font-size: 0.8em;
+    }
+    
+    .lessons-toggle {
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+    
+    .toggle-btn {
+        font-size: 0.9em;
+        padding: 8px 12px;
     }
 }

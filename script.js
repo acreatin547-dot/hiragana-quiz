@@ -108,6 +108,7 @@ class KanaQuiz {
         this.feedbackElement = null;
         this.currentMode = null; // 'hiragana' or 'katakana'
         this.currentView = 'main'; // 'main', 'study', 'quiz'
+        this.currentLessonMode = 'hiragana'; // Default lesson mode
         
         this.initializeElements();
         this.bindEvents();
@@ -129,6 +130,10 @@ class KanaQuiz {
             lessonsSection: document.getElementById('lessons-section'),
             lessonsTitle: document.getElementById('lessons-title'),
             lessonsSubtitle: document.getElementById('lessons-subtitle'),
+            lessonsToggle: document.getElementById('lessons-toggle'),
+            lessonsHiraganaBtn: document.getElementById('lessons-hiragana-btn'),
+            lessonsKatakanaBtn: document.getElementById('lessons-katakana-btn'),
+            lessonsBackBtn: document.getElementById('lessons-back-btn'),
             charactersGrid: document.getElementById('characters-grid'),
             
             // Quiz elements
@@ -160,6 +165,11 @@ class KanaQuiz {
         this.elements.katakanaBtn.addEventListener('click', () => this.selectMode('katakana'));
         this.elements.studyBtn.addEventListener('click', () => this.showStudyMode());
         this.elements.backToMainBtn.addEventListener('click', () => this.showMainMenu());
+        
+        // Lesson toggle events
+        this.elements.lessonsHiraganaBtn.addEventListener('click', () => this.switchLessonMode('hiragana'));
+        this.elements.lessonsKatakanaBtn.addEventListener('click', () => this.switchLessonMode('katakana'));
+        this.elements.lessonsBackBtn.addEventListener('click', () => this.showMainMenu());
         
         // Quiz events
         this.elements.startBtn.addEventListener('click', () => this.startQuiz());
@@ -212,6 +222,7 @@ class KanaQuiz {
     showMainMenu() {
         this.currentView = 'main';
         this.currentMode = null;
+        this.currentLessonMode = 'hiragana'; // Reset lesson mode
         
         // Reset title and subtitle
         this.elements.mainTitle.textContent = '🏮 Kana Quiz';
@@ -241,26 +252,48 @@ class KanaQuiz {
     }
     
     showStudyMode() {
-        if (!this.currentMode) {
-            // If no mode selected, show main menu
-            this.showMainMenu();
-            return;
-        }
-        
         this.currentView = 'study';
         
         // Show lessons section
         this.elements.modeSelection.style.display = 'none';
         this.elements.lessonsSection.style.display = 'block';
         this.elements.quizSection.style.display = 'none';
-        this.elements.backToMainBtn.style.display = 'inline-block';
+        this.elements.backToMainBtn.style.display = 'none'; // Hide the main back button
         
+        // Update lessons title
+        this.elements.lessonsTitle.textContent = 'Study Characters';
+        this.elements.lessonsSubtitle.textContent = 'Review all characters and switch between Hiragana and Katakana';
+        
+        // Reset to hiragana by default and update toggle
+        this.currentLessonMode = 'hiragana';
+        this.updateLessonToggle();
         this.populateCharactersGrid();
     }
     
+    switchLessonMode(mode) {
+        this.currentLessonMode = mode;
+        this.updateLessonToggle();
+        this.populateCharactersGrid();
+    }
+    
+    updateLessonToggle() {
+        // Remove active class from both buttons
+        this.elements.lessonsHiraganaBtn.classList.remove('active');
+        this.elements.lessonsKatakanaBtn.classList.remove('active');
+        
+        // Add active class to current mode button
+        if (this.currentLessonMode === 'hiragana') {
+            this.elements.lessonsHiraganaBtn.classList.add('active');
+        } else {
+            this.elements.lessonsKatakanaBtn.classList.add('active');
+        }
+    }
+    
     populateCharactersGrid() {
-        const currentData = this.currentMode === 'katakana' ? katakanaData : hiraganaData;
-        const charKey = this.currentMode === 'katakana' ? 'katakana' : 'hiragana';
+        // Use lesson mode for study view, or current mode for quiz view
+        const displayMode = this.currentView === 'study' ? this.currentLessonMode : this.currentMode;
+        const currentData = displayMode === 'katakana' ? katakanaData : hiraganaData;
+        const charKey = displayMode === 'katakana' ? 'katakana' : 'hiragana';
         
         this.elements.charactersGrid.innerHTML = '';
         
