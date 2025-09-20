@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiragana Quiz - Learn Japanese Characters</title>
+    <title>Kana Quiz - Learn Japanese Characters</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1 class="main-title">🏮 Hiragana Quiz</h1>
-            <p class="subtitle">Test your knowledge of Japanese Hiragana characters!</p>
+            <h1 class="main-title" id="main-title">🏮 Kana Quiz</h1>
+            <p class="subtitle" id="subtitle">Choose your learning mode!</p>
         </header>
 
         <main>
-            <div class="quiz-section">
+            <!-- Mode Selection Section -->
+            <div class="mode-selection" id="mode-selection">
+                <div class="mode-options">
+                    <button class="mode-btn" id="hiragana-mode-btn" data-mode="hiragana">
+                        <span class="mode-char">あ</span>
+                        <span class="mode-label">Hiragana</span>
+                    </button>
+                    <button class="mode-btn" id="katakana-mode-btn" data-mode="katakana">
+                        <span class="mode-char">ア</span>
+                        <span class="mode-label">Katakana</span>
+                    </button>
+                </div>
+                <div class="menu-options">
+                    <button id="study-btn" class="secondary-btn">📚 Study Mode</button>
+                    <button id="back-to-main" class="secondary-btn" style="display: none;">🏠 Main Menu</button>
+                </div>
+            </div>
+
+            <!-- Study/Lessons Section -->
+            <div class="lessons-section" id="lessons-section" style="display: none;">
+                <div class="lessons-header">
+                    <h2 id="lessons-title">Study Characters</h2>
+                    <p id="lessons-subtitle">Review all characters before taking the quiz</p>
+                </div>
+                <div class="characters-grid" id="characters-grid">
+                    <!-- Characters will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quiz-section" id="quiz-section" style="display: none;">
                 <div class="score-display">
                     <span class="current-score">Score: <span id="current-score">0</span>/<span id="total-questions">0</span></span>
                     <span class="percentage">Accuracy: <span id="percentage">0</span>%</span>
