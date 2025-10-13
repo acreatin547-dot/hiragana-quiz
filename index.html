@@ -27,7 +27,8 @@
                     </button>
                 </div>
                 <div class="menu-options">
-                    <button id="study-btn" class="secondary-btn">📚 Study Mode</button>
+                    <button id="study-btn" class="secondary-btn">📚 Study Characters</button>
+                    <button id="vocabulary-btn" class="secondary-btn">📋 Learn Vocabulary</button>
                     <button id="back-to-main" class="secondary-btn" style="display: none;">🏠 Main Menu</button>
                 </div>
             </div>
@@ -50,6 +51,41 @@
 
                 <div class="lessons-actions">
                     <button id="lessons-back-btn" class="secondary-btn">🏠 Back to Menu</button>
+                </div>
+            </div>
+
+            <!-- Vocabulary Study Section -->
+            <div class="vocabulary-section" id="vocabulary-section" style="display: none;">
+                <div class="vocabulary-header">
+                    <h2 id="vocabulary-title">Learn Japanese Vocabulary</h2>
+                    <p id="vocabulary-subtitle">Study basic Japanese words with Romaji, Hiragana, Katakana, and English</p>
+                </div>
+
+                <div class="vocabulary-controls">
+                    <div class="search-container">
+                        <input type="text" id="vocabulary-search" placeholder="Search vocabulary..." class="search-input">
+                    </div>
+                    <div class="category-filter">
+                        <select id="category-select" class="category-dropdown">
+                            <option value="all">All Categories</option>
+                            <option value="greetings">Greetings</option>
+                            <option value="family">Family</option>
+                            <option value="numbers">Numbers</option>
+                            <option value="colors">Colors</option>
+                            <option value="food">Food</option>
+                            <option value="time">Time</option>
+                            <option value="pronouns">Pronouns</option>
+                            <option value="objects">Objects</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="vocabulary-grid" id="vocabulary-grid">
+                    <!-- Vocabulary cards will be populated by JavaScript -->
+                </div>
+
+                <div class="vocabulary-actions">
+                    <button id="vocabulary-back-btn" class="secondary-btn">🏠 Back to Menu</button>
                 </div>
             </div>
 

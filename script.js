@@ -98,6 +98,76 @@ const katakanaData = [
     { katakana: 'ン', romaji: 'n' }
 ];
 
+// Japanese vocabulary data with all four formats
+const vocabularyData = [
+    // Basic Greetings
+    { romaji: 'ohayou', hiragana: 'おはよう', katakana: 'オハヨウ', english: 'good morning (casual)', category: 'greetings' },
+    { romaji: 'ohayou gozaimasu', hiragana: 'おはようございます', katakana: 'オハヨウゴザイマス', english: 'good morning (polite)', category: 'greetings' },
+    { romaji: 'konnichiwa', hiragana: 'こんにちは', katakana: 'コンニチハ', english: 'hello/good afternoon', category: 'greetings' },
+    { romaji: 'konbanwa', hiragana: 'こんばんは', katakana: 'コンバンハ', english: 'good evening', category: 'greetings' },
+    { romaji: 'sayonara', hiragana: 'さようなら', katakana: 'サヨウナラ', english: 'goodbye', category: 'greetings' },
+    { romaji: 'arigatou', hiragana: 'ありがとう', katakana: 'アリガトウ', english: 'thank you (casual)', category: 'greetings' },
+    { romaji: 'arigatou gozaimasu', hiragana: 'ありがとうございます', katakana: 'アリガトウゴザイマス', english: 'thank you (polite)', category: 'greetings' },
+    { romaji: 'sumimasen', hiragana: 'すみません', katakana: 'スミマセン', english: 'excuse me/sorry', category: 'greetings' },
+    
+    // Family
+    { romaji: 'kazoku', hiragana: 'かぞく', katakana: 'カゾク', english: 'family', category: 'family' },
+    { romaji: 'chichi', hiragana: 'ちち', katakana: 'チチ', english: 'father (own)', category: 'family' },
+    { romaji: 'haha', hiragana: 'はは', katakana: 'ハハ', english: 'mother (own)', category: 'family' },
+    { romaji: 'ani', hiragana: 'あに', katakana: 'アニ', english: 'older brother (own)', category: 'family' },
+    { romaji: 'ane', hiragana: 'あね', katakana: 'アネ', english: 'older sister (own)', category: 'family' },
+    { romaji: 'otouto', hiragana: 'おとうと', katakana: 'オトウト', english: 'younger brother', category: 'family' },
+    { romaji: 'imouto', hiragana: 'いもうと', katakana: 'イモウト', english: 'younger sister', category: 'family' },
+    
+    // Numbers
+    { romaji: 'ichi', hiragana: 'いち', katakana: 'イチ', english: 'one', category: 'numbers' },
+    { romaji: 'ni', hiragana: 'に', katakana: 'ニ', english: 'two', category: 'numbers' },
+    { romaji: 'san', hiragana: 'さん', katakana: 'サン', english: 'three', category: 'numbers' },
+    { romaji: 'shi/yon', hiragana: 'し/よん', katakana: 'シ/ヨン', english: 'four', category: 'numbers' },
+    { romaji: 'go', hiragana: 'ご', katakana: 'ゴ', english: 'five', category: 'numbers' },
+    { romaji: 'roku', hiragana: 'ろく', katakana: 'ロク', english: 'six', category: 'numbers' },
+    { romaji: 'shichi/nana', hiragana: 'しち/なな', katakana: 'シチ/ナナ', english: 'seven', category: 'numbers' },
+    { romaji: 'hachi', hiragana: 'はち', katakana: 'ハチ', english: 'eight', category: 'numbers' },
+    { romaji: 'kyuu/ku', hiragana: 'きゅう/く', katakana: 'キュウ/ク', english: 'nine', category: 'numbers' },
+    { romaji: 'juu', hiragana: 'じゅう', katakana: 'ジュウ', english: 'ten', category: 'numbers' },
+    
+    // Colors
+    { romaji: 'aka', hiragana: 'あか', katakana: 'アカ', english: 'red', category: 'colors' },
+    { romaji: 'ao', hiragana: 'あお', katakana: 'アオ', english: 'blue', category: 'colors' },
+    { romaji: 'ki', hiragana: 'き', katakana: 'キ', english: 'yellow', category: 'colors' },
+    { romaji: 'midori', hiragana: 'みどり', katakana: 'ミドリ', english: 'green', category: 'colors' },
+    { romaji: 'shiro', hiragana: 'しろ', katakana: 'シロ', english: 'white', category: 'colors' },
+    { romaji: 'kuro', hiragana: 'くろ', katakana: 'クロ', english: 'black', category: 'colors' },
+    
+    // Food
+    { romaji: 'gohan', hiragana: 'ごはん', katakana: 'ゴハン', english: 'rice/meal', category: 'food' },
+    { romaji: 'mizu', hiragana: 'みず', katakana: 'ミズ', english: 'water', category: 'food' },
+    { romaji: 'ocha', hiragana: 'おちゃ', katakana: 'オチャ', english: 'tea', category: 'food' },
+    { romaji: 'koohii', hiragana: 'コーヒー', katakana: 'コーヒー', english: 'coffee', category: 'food' },
+    { romaji: 'pan', hiragana: 'パン', katakana: 'パン', english: 'bread', category: 'food' },
+    { romaji: 'tamago', hiragana: 'たまご', katakana: 'タマゴ', english: 'egg', category: 'food' },
+    { romaji: 'niku', hiragana: 'にく', katakana: 'ニク', english: 'meat', category: 'food' },
+    { romaji: 'sakana', hiragana: 'さかな', katakana: 'サカナ', english: 'fish', category: 'food' },
+    
+    // Time
+    { romaji: 'kyou', hiragana: 'きょう', katakana: 'キョウ', english: 'today', category: 'time' },
+    { romaji: 'ashita', hiragana: 'あした', katakana: 'アシタ', english: 'tomorrow', category: 'time' },
+    { romaji: 'kinou', hiragana: 'きのう', katakana: 'キノウ', english: 'yesterday', category: 'time' },
+    { romaji: 'ima', hiragana: 'いま', katakana: 'イマ', english: 'now', category: 'time' },
+    { romaji: 'asa', hiragana: 'あさ', katakana: 'アサ', english: 'morning', category: 'time' },
+    { romaji: 'yoru', hiragana: 'よる', katakana: 'ヨル', english: 'night', category: 'time' },
+    
+    // Basic Words
+    { romaji: 'watashi', hiragana: 'わたし', katakana: 'ワタシ', english: 'I/me', category: 'pronouns' },
+    { romaji: 'anata', hiragana: 'あなた', katakana: 'アナタ', english: 'you', category: 'pronouns' },
+    { romaji: 'kare', hiragana: 'かれ', katakana: 'カレ', english: 'he/him', category: 'pronouns' },
+    { romaji: 'kanojo', hiragana: 'かのじょ', katakana: 'カノジョ', english: 'she/her', category: 'pronouns' },
+    { romaji: 'hon', hiragana: 'ほん', katakana: 'ホン', english: 'book', category: 'objects' },
+    { romaji: 'enpitsu', hiragana: 'えんぴつ', katakana: 'エンピツ', english: 'pencil', category: 'objects' },
+    { romaji: 'kuruma', hiragana: 'くるま', katakana: 'クルマ', english: 'car', category: 'objects' },
+    { romaji: 'ie', hiragana: 'いえ', katakana: 'イエ', english: 'house', category: 'objects' }
+];
+
 class KanaQuiz {
     constructor() {
         this.currentQuestion = 0;
@@ -124,6 +194,7 @@ class KanaQuiz {
             hiraganaBtn: document.getElementById('hiragana-mode-btn'),
             katakanaBtn: document.getElementById('katakana-mode-btn'),
             studyBtn: document.getElementById('study-btn'),
+            vocabularyBtn: document.getElementById('vocabulary-btn'),
             backToMainBtn: document.getElementById('back-to-main'),
             
             // Study/Lessons elements
@@ -135,6 +206,15 @@ class KanaQuiz {
             lessonsKatakanaBtn: document.getElementById('lessons-katakana-btn'),
             lessonsBackBtn: document.getElementById('lessons-back-btn'),
             charactersGrid: document.getElementById('characters-grid'),
+            
+            // Vocabulary elements
+            vocabularySection: document.getElementById('vocabulary-section'),
+            vocabularyTitle: document.getElementById('vocabulary-title'),
+            vocabularySubtitle: document.getElementById('vocabulary-subtitle'),
+            vocabularySearch: document.getElementById('vocabulary-search'),
+            categorySelect: document.getElementById('category-select'),
+            vocabularyGrid: document.getElementById('vocabulary-grid'),
+            vocabularyBackBtn: document.getElementById('vocabulary-back-btn'),
             
             // Quiz elements
             quizSection: document.getElementById('quiz-section'),
@@ -164,12 +244,18 @@ class KanaQuiz {
         this.elements.hiraganaBtn.addEventListener('click', () => this.selectMode('hiragana'));
         this.elements.katakanaBtn.addEventListener('click', () => this.selectMode('katakana'));
         this.elements.studyBtn.addEventListener('click', () => this.showStudyMode());
+        this.elements.vocabularyBtn.addEventListener('click', () => this.showVocabularyMode());
         this.elements.backToMainBtn.addEventListener('click', () => this.showMainMenu());
         
         // Lesson toggle events
         this.elements.lessonsHiraganaBtn.addEventListener('click', () => this.switchLessonMode('hiragana'));
         this.elements.lessonsKatakanaBtn.addEventListener('click', () => this.switchLessonMode('katakana'));
         this.elements.lessonsBackBtn.addEventListener('click', () => this.showMainMenu());
+        
+        // Vocabulary events
+        this.elements.vocabularyBackBtn.addEventListener('click', () => this.showMainMenu());
+        this.elements.vocabularySearch.addEventListener('input', (e) => this.filterVocabulary());
+        this.elements.categorySelect.addEventListener('change', (e) => this.filterVocabulary());
         
         // Quiz events
         this.elements.startBtn.addEventListener('click', () => this.startQuiz());
@@ -231,9 +317,11 @@ class KanaQuiz {
         // Show/hide appropriate sections
         this.elements.modeSelection.style.display = 'block';
         this.elements.lessonsSection.style.display = 'none';
+        this.elements.vocabularySection.style.display = 'none';
         this.elements.quizSection.style.display = 'none';
         this.elements.backToMainBtn.style.display = 'none';
         this.elements.studyBtn.style.display = 'inline-block';
+        this.elements.vocabularyBtn.style.display = 'inline-block';
     }
     
     showQuizMenu() {
@@ -268,6 +356,81 @@ class KanaQuiz {
         this.currentLessonMode = 'hiragana';
         this.updateLessonToggle();
         this.populateCharactersGrid();
+    }
+    
+    showVocabularyMode() {
+        this.currentView = 'vocabulary';
+        
+        // Show vocabulary section
+        this.elements.modeSelection.style.display = 'none';
+        this.elements.lessonsSection.style.display = 'none';
+        this.elements.vocabularySection.style.display = 'block';
+        this.elements.quizSection.style.display = 'none';
+        this.elements.backToMainBtn.style.display = 'none';
+        
+        // Reset search and filter
+        this.elements.vocabularySearch.value = '';
+        this.elements.categorySelect.value = 'all';
+        
+        this.populateVocabularyGrid();
+    }
+    
+    populateVocabularyGrid(filteredData = null) {
+        const dataToShow = filteredData || vocabularyData;
+        this.elements.vocabularyGrid.innerHTML = '';
+        
+        dataToShow.forEach(item => {
+            const vocabCard = document.createElement('div');
+            vocabCard.className = 'vocabulary-card';
+            
+            vocabCard.innerHTML = `
+                <div class="vocab-category">${item.category}</div>
+                <div class="vocab-formats">
+                    <div class="vocab-format">
+                        <span class="format-label">Romaji:</span>
+                        <span class="format-text romaji-text">${item.romaji}</span>
+                    </div>
+                    <div class="vocab-format">
+                        <span class="format-label">Hiragana:</span>
+                        <span class="format-text hiragana-text">${item.hiragana}</span>
+                    </div>
+                    <div class="vocab-format">
+                        <span class="format-label">Katakana:</span>
+                        <span class="format-text katakana-text">${item.katakana}</span>
+                    </div>
+                    <div class="vocab-format english-format">
+                        <span class="format-label">English:</span>
+                        <span class="format-text english-text">${item.english}</span>
+                    </div>
+                </div>
+            `;
+            
+            this.elements.vocabularyGrid.appendChild(vocabCard);
+        });
+    }
+    
+    filterVocabulary() {
+        const searchTerm = this.elements.vocabularySearch.value.toLowerCase();
+        const selectedCategory = this.elements.categorySelect.value;
+        
+        let filteredData = vocabularyData;
+        
+        // Filter by category
+        if (selectedCategory !== 'all') {
+            filteredData = filteredData.filter(item => item.category === selectedCategory);
+        }
+        
+        // Filter by search term
+        if (searchTerm) {
+            filteredData = filteredData.filter(item => 
+                item.romaji.toLowerCase().includes(searchTerm) ||
+                item.hiragana.includes(searchTerm) ||
+                item.katakana.includes(searchTerm) ||
+                item.english.toLowerCase().includes(searchTerm)
+            );
+        }
+        
+        this.populateVocabularyGrid(filteredData);
     }
     
     switchLessonMode(mode) {
